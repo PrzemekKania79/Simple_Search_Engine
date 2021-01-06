@@ -1,4 +1,4 @@
-package search;
+package search.utilities;
 
 import java.util.List;
 

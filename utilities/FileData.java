@@ -1,4 +1,6 @@
-package search;
+package search.utilities;
+
+import search.Menu;
 
 import java.io.File;
 import java.io.FileNotFoundException;
