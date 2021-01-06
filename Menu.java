@@ -31,7 +31,6 @@ public class Menu {
                     switch (searchMethod) {
                         case "ALL":
                             contextSelection.setSearch(new SearchAll());
-                            printPerson.printPerson(contextSelection.searchValue(data, keywords));
                             break;
                         case "ANY":
 

@@ -1,6 +1,4 @@
-package search.utilities;
-
-import search.strategies.*;
+package search.strategies;
 
 import java.util.List;
 import java.util.Map;
