@@ -10,7 +10,7 @@ public class SearchingEngine {
         this.isFind = isFind;
         List<Integer> temp = new ArrayList<>();
         for (String e : data) {
-            if (search.length() == 1) break;
+            if (search.length() <= 1) break;
             if (e.toLowerCase().matches(search.toLowerCase())) {
                 this.isFind = true;
                 System.out.println(e);

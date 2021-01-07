@@ -15,10 +15,17 @@ public class SearchAll implements SearchStrategy {
         String search = sc.nextLine();
         search = search.replaceAll("(^\\s+)|(\\s+$)", "");
         search = search.replaceAll("\\s+", " ");
-        search = "(.*" + search.replaceAll("\\s", ".*)|(.*") + ".*)";
-        searchingEngine.addKeywordList(data, keywords, isFind, search);
-        printPerson.printPerson(data, keywords, searchingEngine.getIsFind(isFind), search);
-
+        search = ".*(?=.*" + search.replaceAll("\\s", ").*(?=.*") + ").*";
+        try {
+            if (keywords.containsKey(search)) {
+                isFind = true;
+                printPerson.printPerson(data, keywords, isFind, search);
+            } else {
+                searchingEngine.addKeywordList(data, keywords, isFind, search);
+                printPerson.printPerson(data, keywords, searchingEngine.getIsFind(isFind), search);
+            }
+        } catch (NullPointerException | ClassCastException e) {
+        }
         return data;
     }
 }

@@ -31,13 +31,15 @@ public class Menu {
                     switch (searchMethod) {
                         case "ALL":
                             contextSelection.setSearch(new SearchAll());
+                            contextSelection.searchValue(data, keywords);
                             break;
                         case "ANY":
-
+                            contextSelection.setSearch(new SearchAny());
+                            contextSelection.searchValue(data, keywords);
                             break;
-
                         case "NONE":
-
+                            contextSelection.setSearch(new SearchNone());
+                            contextSelection.searchValue(data, keywords);
                             break;
 
                         default:
