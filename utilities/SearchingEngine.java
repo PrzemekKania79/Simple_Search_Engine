@@ -13,7 +13,6 @@ public class SearchingEngine {
             if (search.length() <= 1) break;
             if (e.toLowerCase().matches(search.toLowerCase())) {
                 this.isFind = true;
-                System.out.println(e);
                 temp.add(data.indexOf(e));
             }
         }

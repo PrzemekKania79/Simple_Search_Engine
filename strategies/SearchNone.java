@@ -15,7 +15,7 @@ public class SearchNone implements SearchStrategy {
         String search = sc.nextLine();
         search = search.replaceAll("(^\\s+)|(\\s+$)", "");
         search = search.replaceAll("\\s+", " ");
-        search = "(.*" + search.replaceAll("\\s", ".*)|(.*") + ".*)";
+        search = "(?!(?:.*" + search.replaceAll("\\s", "|.*") + ")).*";
         try {
             if (keywords.containsKey(search)) {
                 isFind = true;
